@@ -15,10 +15,11 @@ const Main = () => {
         setNewTask("");
     }
 
-    const removeTask = (e, index) => {
-        e.preventDefault();
-        tasks.splice(index, 1);
-        setTasks(tasks);
+    const removeTask = (index) => {
+        const updatedTasks = tasks.filter((task, i) => {
+            return i !== index
+        })
+        setTasks(updatedTasks);
     }
 
     return (
@@ -29,7 +30,7 @@ const Main = () => {
                     {tasks.map((task, index) => (
                         <li key={index}>
                             {task}
-                            <button onClick={removeTask} key={index} className='btn'>Rimuovi</button>
+                            <button onClick={() => removeTask(index)} className='btn'>Rimuovi</button>
                         </li>
                     ))}
                 </ul>
