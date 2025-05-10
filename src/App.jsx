@@ -1,12 +1,12 @@
 import './App.css'
+import Main from './components/Main'
 
-const giornata = ["colazione", "pranzo", "cena"];
 
 function App() {
 
   return (
     <>
-      
+      <Main />
     </>
   )
 }
